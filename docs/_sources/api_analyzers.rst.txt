@@ -1,0 +1,23 @@
+saleae.analyzers package
+========================
+
+.. autoclass:: saleae.analyzers.high_level_analyzer.HighLevelAnalyzer
+   :members:
+   :no-undoc-members:
+
+.. autoclass:: saleae.analyzers.high_level_analyzer.AnalyzerFrame
+   :members:
+   :no-undoc-members:
+
+.. autoclass:: saleae.analyzers.settings.StringSetting
+   :members:
+   :no-undoc-members:
+
+.. autoclass:: saleae.analyzers.settings.NumberSetting
+   :members:
+   :no-undoc-members:
+
+.. autoclass:: saleae.analyzers.settings.ChoicesSetting
+   :members:
+   :no-undoc-members:
+

@@ -3,70 +3,16 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Logic 2's documentation!
+Logic 2 API Documentation
 ===================================
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
-.. autoclass:: saleae.data.SaleaeTime
-   :members:
-   :special-members: __add__, __sub__, __str__
-   :no-undoc-members:
-
-.. autoclass:: saleae.data.SaleaeTimeDelta
-   :members:
-   :special-members: __add__, __sub__, __float__, __eq__, __ne__, __lt__, __le__, __gt__, __ge__
-   :no-undoc-members:
-
-.. autoclass:: saleae.data.analog_span.AnalogSpan
-   :members:
-   :no-undoc-members:
-
-.. autoclass:: saleae.data.analog_span.AcquisitionInfo
-   :members:
-   :no-undoc-members:
-
-.. autoclass:: saleae.analyzers.high_level_analyzer.HighLevelAnalyzer
-   :members:
-   :no-undoc-members:
-
-.. autoclass:: saleae.analyzers.high_level_analyzer.AnalyzerFrame
-   :members:
-   :no-undoc-members:
-
-.. autoclass:: saleae.analyzers.settings.StringSetting
-   :members:
-   :no-undoc-members:
-
-.. autoclass:: saleae.analyzers.settings.NumberSetting
-   :members:
-   :no-undoc-members:
-
-.. autoclass:: saleae.analyzers.settings.ChoicesSetting
-   :members:
-   :no-undoc-members:
-
-.. autoclass:: saleae.measurements.analog_measurer.AnalogMeasurer
-   :members:
-   :no-undoc-members:
-
-.. autoclass:: saleae.measurements.measure.Measure
-   :members:
-   :no-undoc-members:
-
-.. autoclass:: saleae.measurements.annotation.Annotation
-   :members:
-   :no-undoc-members:
-
-.. autoclass:: saleae.measurements.annotation.HorizontalRule
-   :members:
-   :no-undoc-members:
-
-.. autoclass:: saleae.measurements.annotation.VerticalRule
-   :members:
-   :no-undoc-members:
+   api_data
+   api_measurements
+   api_analyzers
 
 Indices and tables
 ==================

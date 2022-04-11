@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Welcome to Logic 2’s documentation! &mdash; Logic 2  documentation</title>
+  <title>Logic 2 API Documentation &mdash; Logic 2  documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -17,7 +17,8 @@
         <script src="_static/doctools.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" /> 
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="salaea.data package" href="api_data.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -35,12 +36,13 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <!-- Local TOC -->
-              <div class="local-toc"><ul>
-<li><a class="reference internal" href="#">Welcome to Logic 2’s documentation!</a></li>
-<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api_data.html">salaea.data package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_measurements.html">saleae.measurements package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_analyzers.html">saleae.analyzers package</a></li>
 </ul>
-</div>
+
         </div>
       </div>
     </nav>
@@ -55,7 +57,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="#" class="icon icon-home"></a> &raquo;</li>
-      <li>Welcome to Logic 2’s documentation!</li>
+      <li>Logic 2 API Documentation</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -65,319 +67,16 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="welcome-to-logic-2-s-documentation">
-<h1>Welcome to Logic 2’s documentation!<a class="headerlink" href="#welcome-to-logic-2-s-documentation" title="Permalink to this headline"></a></h1>
+  <section id="logic-2-api-documentation">
+<h1>Logic 2 API Documentation<a class="headerlink" href="#logic-2-api-documentation" title="Permalink to this headline"></a></h1>
 <div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api_data.html">salaea.data package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_measurements.html">saleae.measurements package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_analyzers.html">saleae.analyzers package</a></li>
+</ul>
 </div>
-<dl class="py class">
-<dt class="sig sig-object py" id="saleae.data.SaleaeTime">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">saleae.data.</span></span><span class="sig-name descname"><span class="pre">SaleaeTime</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">datetime</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">datetime</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">millisecond</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">microsecond</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nanosecond</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">picosecond</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#saleae.data.SaleaeTime" title="Permalink to this definition"></a></dt>
-<dd><p>A high-precision wall clock time.</p>
-<p>The primary way to use this type of value is to subtract two <a class="reference internal" href="#saleae.data.SaleaeTime" title="saleae.data.SaleaeTime"><code class="xref py py-class docutils literal notranslate"><span class="pre">SaleaeTime</span></code></a>s to produce a <a class="reference internal" href="#saleae.data.SaleaeTimeDelta" title="saleae.data.SaleaeTimeDelta"><code class="xref py py-class docutils literal notranslate"><span class="pre">SaleaeTimeDelta</span></code></a>. <a class="reference internal" href="#saleae.data.SaleaeTimeDelta" title="saleae.data.SaleaeTimeDelta"><code class="xref py py-class docutils literal notranslate"><span class="pre">SaleaeTimeDelta</span></code></a>s
-may be freely added and subtracted from each other, and converted to floating point seconds. They can also be added to or subtracted from <a class="reference internal" href="#saleae.data.SaleaeTime" title="saleae.data.SaleaeTime"><code class="xref py py-class docutils literal notranslate"><span class="pre">SaleaeTime</span></code></a>s
-to produce a suitable offset <a class="reference internal" href="#saleae.data.SaleaeTime" title="saleae.data.SaleaeTime"><code class="xref py py-class docutils literal notranslate"><span class="pre">SaleaeTime</span></code></a>.</p>
-<p>Constructs a <a class="reference internal" href="#saleae.data.SaleaeTime" title="saleae.data.SaleaeTime"><code class="xref py py-class docutils literal notranslate"><span class="pre">SaleaeTime</span></code></a> using a <a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code></a>, and optionally sub-millisecond precision values.</p>
-<p>The sub-millisecond precision values must be converible to <cite>float</cite>.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="saleae.data.SaleaeTime.__add__">
-<span class="sig-name descname"><span class="pre">__add__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#saleae.data.SaleaeTime.__add__" title="Permalink to this definition"></a></dt>
-<dd><p>Add a <a class="reference internal" href="#saleae.data.SaleaeTimeDelta" title="saleae.data.SaleaeTimeDelta"><code class="xref py py-class docutils literal notranslate"><span class="pre">SaleaeTimeDelta</span></code></a> value to produce a new <a class="reference internal" href="#saleae.data.SaleaeTime" title="saleae.data.SaleaeTime"><code class="xref py py-class docutils literal notranslate"><span class="pre">SaleaeTime</span></code></a>.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="saleae.data.SaleaeTime.__str__">
-<span class="sig-name descname"><span class="pre">__str__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#saleae.data.SaleaeTime.__str__" title="Permalink to this definition"></a></dt>
-<dd><p>Converts <a class="reference internal" href="#saleae.data.SaleaeTime" title="saleae.data.SaleaeTime"><code class="xref py py-class docutils literal notranslate"><span class="pre">SaleaeTime</span></code></a> to an ISO 8601 string with picosecond precision.</p>
-<p>Timezone is always UTC, using the Z suffix.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="saleae.data.SaleaeTime.__sub__">
-<span class="sig-name descname"><span class="pre">__sub__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#saleae.data.SaleaeTime.__sub__" title="Permalink to this definition"></a></dt>
-<dd><p>Subtract a <a class="reference internal" href="#saleae.data.SaleaeTime" title="saleae.data.SaleaeTime"><code class="xref py py-class docutils literal notranslate"><span class="pre">SaleaeTime</span></code></a> or <a class="reference internal" href="#saleae.data.SaleaeTimeDelta" title="saleae.data.SaleaeTimeDelta"><code class="xref py py-class docutils literal notranslate"><span class="pre">SaleaeTimeDelta</span></code></a> value.</p>
-<div class="line-block">
-<div class="line">When subtracting a <a class="reference internal" href="#saleae.data.SaleaeTime" title="saleae.data.SaleaeTime"><code class="xref py py-class docutils literal notranslate"><span class="pre">SaleaeTime</span></code></a>, produces a <a class="reference internal" href="#saleae.data.SaleaeTimeDelta" title="saleae.data.SaleaeTimeDelta"><code class="xref py py-class docutils literal notranslate"><span class="pre">SaleaeTimeDelta</span></code></a>.</div>
-<div class="line">When subtracing a <a class="reference internal" href="#saleae.data.SaleaeTimeDelta" title="saleae.data.SaleaeTimeDelta"><code class="xref py py-class docutils literal notranslate"><span class="pre">SaleaeTimeDelta</span></code></a>, produces a <a class="reference internal" href="#saleae.data.SaleaeTime" title="saleae.data.SaleaeTime"><code class="xref py py-class docutils literal notranslate"><span class="pre">SaleaeTime</span></code></a>.</div>
-</div>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="saleae.data.SaleaeTime.as_datetime">
-<span class="sig-name descname"><span class="pre">as_datetime</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#saleae.data.SaleaeTime" title="saleae.data.SaleaeTime"><span class="pre">SaleaeTime</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">datetime</span></span></span><a class="headerlink" href="#saleae.data.SaleaeTime.as_datetime" title="Permalink to this definition"></a></dt>
-<dd><p>Produces a <a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code></a> value that is as close as possible to the given value.</p>
-<p>The produced <a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code></a> is always timezone aware an in the UTC timezone. Local time can be procured
-using the standard Python <a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code></a> conversion functions.</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="saleae.data.SaleaeTimeDelta">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">saleae.data.</span></span><span class="sig-name descname"><span class="pre">SaleaeTimeDelta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">second</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">millisecond</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">microsecond</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nanosecond</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">picosecond</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#saleae.data.SaleaeTimeDelta" title="Permalink to this definition"></a></dt>
-<dd><p>A high-precision duration.</p>
-<p>Constructs a SaleaeTimeDelta using numerical values.</p>
-<p>All values must be convertible to <cite>float</cite>. Multiple prefixes may be specified, the resulting value will
-be all the values added together.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="saleae.data.SaleaeTimeDelta.__add__">
-<span class="sig-name descname"><span class="pre">__add__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#saleae.data.SaleaeTimeDelta.__add__" title="Permalink to this definition"></a></dt>
-<dd><p>Add a <a class="reference internal" href="#saleae.data.SaleaeTimeDelta" title="saleae.data.SaleaeTimeDelta"><code class="xref py py-class docutils literal notranslate"><span class="pre">SaleaeTimeDelta</span></code></a> value to produce a new <a class="reference internal" href="#saleae.data.SaleaeTimeDelta" title="saleae.data.SaleaeTimeDelta"><code class="xref py py-class docutils literal notranslate"><span class="pre">SaleaeTimeDelta</span></code></a>.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="saleae.data.SaleaeTimeDelta.__eq__">
-<span class="sig-name descname"><span class="pre">__eq__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#saleae.data.SaleaeTimeDelta.__eq__" title="Permalink to this definition"></a></dt>
-<dd><p>Determine if two <a class="reference internal" href="#saleae.data.SaleaeTimeDelta" title="saleae.data.SaleaeTimeDelta"><code class="xref py py-class docutils literal notranslate"><span class="pre">SaleaeTimeDelta</span></code></a> values are equal, up to a tolerance.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="saleae.data.SaleaeTimeDelta.__float__">
-<span class="sig-name descname"><span class="pre">__float__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#saleae.data.SaleaeTimeDelta.__float__" title="Permalink to this definition"></a></dt>
-<dd><p>Convert to a floating point number of seconds. Note that this can cause a loss of precision for values &gt; 1ms.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="saleae.data.SaleaeTimeDelta.__ge__">
-<span class="sig-name descname"><span class="pre">__ge__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#saleae.data.SaleaeTimeDelta.__ge__" title="Permalink to this definition"></a></dt>
-<dd><p>Determine if the first <a class="reference internal" href="#saleae.data.SaleaeTimeDelta" title="saleae.data.SaleaeTimeDelta"><code class="xref py py-class docutils literal notranslate"><span class="pre">SaleaeTimeDelta</span></code></a> value is greater than or equal to the second, up to a tolerance.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="saleae.data.SaleaeTimeDelta.__gt__">
-<span class="sig-name descname"><span class="pre">__gt__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#saleae.data.SaleaeTimeDelta.__gt__" title="Permalink to this definition"></a></dt>
-<dd><p>Determine if the first <a class="reference internal" href="#saleae.data.SaleaeTimeDelta" title="saleae.data.SaleaeTimeDelta"><code class="xref py py-class docutils literal notranslate"><span class="pre">SaleaeTimeDelta</span></code></a> value is greater than the second, up to a tolerance.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="saleae.data.SaleaeTimeDelta.__le__">
-<span class="sig-name descname"><span class="pre">__le__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#saleae.data.SaleaeTimeDelta.__le__" title="Permalink to this definition"></a></dt>
-<dd><p>Determine if the first <a class="reference internal" href="#saleae.data.SaleaeTimeDelta" title="saleae.data.SaleaeTimeDelta"><code class="xref py py-class docutils literal notranslate"><span class="pre">SaleaeTimeDelta</span></code></a> value is less than or equal to the second, up to a tolerance.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="saleae.data.SaleaeTimeDelta.__lt__">
-<span class="sig-name descname"><span class="pre">__lt__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#saleae.data.SaleaeTimeDelta.__lt__" title="Permalink to this definition"></a></dt>
-<dd><p>Determine if the first <a class="reference internal" href="#saleae.data.SaleaeTimeDelta" title="saleae.data.SaleaeTimeDelta"><code class="xref py py-class docutils literal notranslate"><span class="pre">SaleaeTimeDelta</span></code></a> value is less than the second, up to a tolerance.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="saleae.data.SaleaeTimeDelta.__ne__">
-<span class="sig-name descname"><span class="pre">__ne__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#saleae.data.SaleaeTimeDelta.__ne__" title="Permalink to this definition"></a></dt>
-<dd><p>Determine if two <a class="reference internal" href="#saleae.data.SaleaeTimeDelta" title="saleae.data.SaleaeTimeDelta"><code class="xref py py-class docutils literal notranslate"><span class="pre">SaleaeTimeDelta</span></code></a> values are not equal, up to a tolerance.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="saleae.data.SaleaeTimeDelta.__sub__">
-<span class="sig-name descname"><span class="pre">__sub__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#saleae.data.SaleaeTimeDelta.__sub__" title="Permalink to this definition"></a></dt>
-<dd><p>Subtract a <a class="reference internal" href="#saleae.data.SaleaeTimeDelta" title="saleae.data.SaleaeTimeDelta"><code class="xref py py-class docutils literal notranslate"><span class="pre">SaleaeTimeDelta</span></code></a> value to produce a new <a class="reference internal" href="#saleae.data.SaleaeTimeDelta" title="saleae.data.SaleaeTimeDelta"><code class="xref py py-class docutils literal notranslate"><span class="pre">SaleaeTimeDelta</span></code></a>.</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="saleae.data.analog_span.AnalogSpan">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">saleae.data.analog_span.</span></span><span class="sig-name descname"><span class="pre">AnalogSpan</span></span><a class="headerlink" href="#saleae.data.analog_span.AnalogSpan" title="Permalink to this definition"></a></dt>
-<dd><p>Collection of contiguous AnalogData objects</p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="saleae.data.analog_span.AnalogSpan.acquisition_info">
-<span class="sig-name descname"><span class="pre">acquisition_info</span></span><a class="headerlink" href="#saleae.data.analog_span.AnalogSpan.acquisition_info" title="Permalink to this definition"></a></dt>
-<dd><p>Return limit information about the underlying data.
-See <code class="xref py py-class docutils literal notranslate"><span class="pre">Limits</span></code></p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="saleae.data.analog_span.AnalogSpan.find_ge">
-<span class="sig-name descname"><span class="pre">find_ge</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">double</span> <span class="pre">value:</span> <span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start:</span> <span class="pre">Optional[int]</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end:</span> <span class="pre">Optional[int]</span> <span class="pre">=</span> <span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><span class="pre">int</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#saleae.data.analog_span.AnalogSpan.find_ge" title="Permalink to this definition"></a></dt>
-<dd><p>Greater than or equal</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="saleae.data.analog_span.AnalogSpan.find_gt">
-<span class="sig-name descname"><span class="pre">find_gt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">double</span> <span class="pre">value:</span> <span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start:</span> <span class="pre">Optional[int]</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end:</span> <span class="pre">Optional[int]</span> <span class="pre">=</span> <span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><span class="pre">int</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#saleae.data.analog_span.AnalogSpan.find_gt" title="Permalink to this definition"></a></dt>
-<dd><p>Find and return the first sample value that is greater than <cite>value</cite>, searching forwards from the start sample index.
-Returns None if one cannot be found.
-:param value: the value to compare to
-:param start: the beginning of the sample index range to search (inclusive) - if omitted, this will be sample index 0
-:param end: the end of the sample index range to search (exclusive) - if omitted, this will be the end of the data
-:return: the sample index of first sample value that is less than <cite>value</cite></p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="saleae.data.analog_span.AnalogSpan.find_le">
-<span class="sig-name descname"><span class="pre">find_le</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">double</span> <span class="pre">value:</span> <span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start:</span> <span class="pre">Optional[int]</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end:</span> <span class="pre">Optional[int]</span> <span class="pre">=</span> <span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><span class="pre">int</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#saleae.data.analog_span.AnalogSpan.find_le" title="Permalink to this definition"></a></dt>
-<dd><p>Less than or equal</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="saleae.data.analog_span.AnalogSpan.find_lt">
-<span class="sig-name descname"><span class="pre">find_lt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">double</span> <span class="pre">value:</span> <span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start:</span> <span class="pre">Optional[int]</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end:</span> <span class="pre">Optional[int]</span> <span class="pre">=</span> <span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><span class="pre">int</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#saleae.data.analog_span.AnalogSpan.find_lt" title="Permalink to this definition"></a></dt>
-<dd><p>Less than</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="saleae.data.analog_span.AnalogSpan.histogram">
-<span class="sig-name descname"><span class="pre">histogram</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">np.array</span></span></span><a class="headerlink" href="#saleae.data.analog_span.AnalogSpan.histogram" title="Permalink to this definition"></a></dt>
-<dd><p>Generate a histogram and return an array with the count for each bin, and the voltage value at each bin edge.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="saleae.data.analog_span.AnalogSpan.max">
-<span class="sig-name descname"><span class="pre">max</span></span><a class="headerlink" href="#saleae.data.analog_span.AnalogSpan.max" title="Permalink to this definition"></a></dt>
-<dd><p>Find the maximum sample value in this data set.
-:return: maximum sample value</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="saleae.data.analog_span.AnalogSpan.min">
-<span class="sig-name descname"><span class="pre">min</span></span><a class="headerlink" href="#saleae.data.analog_span.AnalogSpan.min" title="Permalink to this definition"></a></dt>
-<dd><p>Find the minimum sample value in this data set.
-:return: minimum sample value</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="saleae.data.analog_span.AnalogSpan.raw_chunks">
-<span class="sig-name descname"><span class="pre">raw_chunks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#saleae.data.analog_span.AnalogSpan.raw_chunks" title="Permalink to this definition"></a></dt>
-<dd><p>Return a list of this object’s underlying <cite>AnalogData</cite> objects.
-Note: This is targeted at power users who want to the raw sample buffers. Because the sample data is stored in separate sample buffers, they can be unwieldy to work with.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="saleae.data.analog_span.AnalogSpan.rfind_ge">
-<span class="sig-name descname"><span class="pre">rfind_ge</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">double</span> <span class="pre">value:</span> <span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start:</span> <span class="pre">Optional[int]</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end:</span> <span class="pre">Optional[int]</span> <span class="pre">=</span> <span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><span class="pre">int</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#saleae.data.analog_span.AnalogSpan.rfind_ge" title="Permalink to this definition"></a></dt>
-<dd><p>Greater than or equal</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="saleae.data.analog_span.AnalogSpan.rfind_gt">
-<span class="sig-name descname"><span class="pre">rfind_gt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">double</span> <span class="pre">value:</span> <span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start:</span> <span class="pre">Optional[int]</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end:</span> <span class="pre">Optional[int]</span> <span class="pre">=</span> <span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><span class="pre">int</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#saleae.data.analog_span.AnalogSpan.rfind_gt" title="Permalink to this definition"></a></dt>
-<dd><p>Find and return the first sample value that is greater than <cite>value</cite>, searching backwards from the end sample index.
-Returns None if one cannot be found.
-:param value: the value to compare to
-:param start: the beginning of the sample index range to search (inclusive) - if omitted, this will be sample index 0
-:param end: the end of the sample index range to search (exclusive) - if omitted, this will be the end of the data
-:return: the sample index of first sample value that is less than <cite>value</cite></p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="saleae.data.analog_span.AnalogSpan.rfind_le">
-<span class="sig-name descname"><span class="pre">rfind_le</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">double</span> <span class="pre">value:</span> <span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start:</span> <span class="pre">Optional[int]</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end:</span> <span class="pre">Optional[int]</span> <span class="pre">=</span> <span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><span class="pre">int</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#saleae.data.analog_span.AnalogSpan.rfind_le" title="Permalink to this definition"></a></dt>
-<dd><p>Less than or equal</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="saleae.data.analog_span.AnalogSpan.rfind_lt">
-<span class="sig-name descname"><span class="pre">rfind_lt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">double</span> <span class="pre">value:</span> <span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start:</span> <span class="pre">Optional[int]</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end:</span> <span class="pre">Optional[int]</span> <span class="pre">=</span> <span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><span class="pre">int</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#saleae.data.analog_span.AnalogSpan.rfind_lt" title="Permalink to this definition"></a></dt>
-<dd><p>Less than</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="saleae.data.analog_span.AnalogSpan.sample_index_to_time">
-<span class="sig-name descname"><span class="pre">sample_index_to_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">SampleNumber</span> <span class="pre">index:</span> <span class="pre">SampleNumber</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#saleae.data.analog_span.AnalogSpan.sample_index_to_time" title="Permalink to this definition"></a></dt>
-<dd><p>Convert a sample index in this data set to a <cite>SaleaeTime</cite> value.
-:param index: sample index to convert to a time
-:return: the time of the sample at <cite>index</cite></p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="saleae.data.analog_span.AnalogSpan.time_interval">
-<span class="sig-name descname"><span class="pre">time_interval</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">SaleaeTimeInterval</span></span></span><a class="headerlink" href="#saleae.data.analog_span.AnalogSpan.time_interval" title="Permalink to this definition"></a></dt>
-<dd><p>Return the time interval of this span.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="saleae.data.analog_span.AnalogSpan.time_to_sample_index_ceil">
-<span class="sig-name descname"><span class="pre">time_to_sample_index_ceil</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">SaleaeTime</span> <span class="pre">time:</span> <span class="pre">SaleaeTime</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><span class="pre">int</span></a></span></span><a class="headerlink" href="#saleae.data.analog_span.AnalogSpan.time_to_sample_index_ceil" title="Permalink to this definition"></a></dt>
-<dd><p>Convert a time to the nearest sample index in this data set.
-If time is before the first sample, <cite>0</cite> will be returned.
-If time is after the last sample, the last sample index will be returned.
-Rounds up to the nearest index
-:param time: time to convert to a sample index
-:return: the sample index at time <cite>time</cite></p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="saleae.data.analog_span.AnalogSpan.time_to_sample_index_floor">
-<span class="sig-name descname"><span class="pre">time_to_sample_index_floor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">SaleaeTime</span> <span class="pre">time:</span> <span class="pre">SaleaeTime</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#saleae.data.analog_span.AnalogSpan.time_to_sample_index_floor" title="Permalink to this definition"></a></dt>
-<dd><p>Convert a time to the nearest sample index in this data set.
-If time is before the first sample, <cite>0</cite> will be returned.
-If time is after the last sample, the last sample index will be returned.
-Rounds down to the nearest index
-:param time: time to convert to a sample index
-:return: the sample index at time <cite>time</cite></p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="saleae.data.analog_span.AcquisitionInfo">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">saleae.data.analog_span.</span></span><span class="sig-name descname"><span class="pre">AcquisitionInfo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_adc_code</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><span class="pre">int</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_adc_code</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><span class="pre">int</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#saleae.data.analog_span.AcquisitionInfo" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="saleae.analyzers.high_level_analyzer.HighLevelAnalyzer">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">saleae.analyzers.high_level_analyzer.</span></span><span class="sig-name descname"><span class="pre">HighLevelAnalyzer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">settings</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#saleae.analyzers.high_level_analyzer.HighLevelAnalyzer" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="saleae.analyzers.high_level_analyzer.AnalyzerFrame">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">saleae.analyzers.high_level_analyzer.</span></span><span class="sig-name descname"><span class="pre">AnalyzerFrame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.10)"><span class="pre">Optional</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.10)"><span class="pre">dict</span></a><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#saleae.analyzers.high_level_analyzer.AnalyzerFrame" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="saleae.analyzers.settings.StringSetting">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">saleae.analyzers.settings.</span></span><span class="sig-name descname"><span class="pre">StringSetting</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#saleae.analyzers.settings.StringSetting" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="saleae.analyzers.settings.NumberSetting">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">saleae.analyzers.settings.</span></span><span class="sig-name descname"><span class="pre">NumberSetting</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#saleae.analyzers.settings.NumberSetting" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="saleae.analyzers.settings.ChoicesSetting">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">saleae.analyzers.settings.</span></span><span class="sig-name descname"><span class="pre">ChoicesSetting</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">choices</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#saleae.analyzers.settings.ChoicesSetting" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="saleae.measurements.analog_measurer.AnalogMeasurer">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">saleae.measurements.analog_measurer.</span></span><span class="sig-name descname"><span class="pre">AnalogMeasurer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">enabled_measures</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#saleae.measurements.analog_measurer.AnalogMeasurer" title="Permalink to this definition"></a></dt>
-<dd><p>AnalogMeasurer base class
-At least one of measure_point or measure_range must be implemented.</p>
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="saleae.measurements.measure.Measure">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">saleae.measurements.measure.</span></span><span class="sig-name descname"><span class="pre">Measure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label:</span> <span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type:</span> <span class="pre">typing.Type[saleae.measurements.measure.MeasureType]</span> <span class="pre">=</span> <span class="pre">&lt;class</span> <span class="pre">'float'&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">description:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">units:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#saleae.measurements.measure.Measure" title="Permalink to this definition"></a></dt>
-<dd><dl class="simple">
-<dt>Attributes:</dt><dd><dl class="simple">
-<dt>value<span class="classifier">int</span></dt><dd><p>Test attribute</p>
-</dd>
-</dl>
-</dd>
-</dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="saleae.measurements.measure.Measure.enabled">
-<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">enabled</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><span class="pre">bool</span></a></span></span><a class="headerlink" href="#saleae.measurements.measure.Measure.enabled" title="Permalink to this definition"></a></dt>
-<dd><p>True if this Measure has been enabled</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="saleae.measurements.annotation.Annotation">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">saleae.measurements.annotation.</span></span><span class="sig-name descname"><span class="pre">Annotation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">measures</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.10)"><span class="pre">List</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#saleae.measurements.measure.Measure" title="saleae.measurements.measure.Measure"><span class="pre">saleae.measurements.measure.Measure</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#saleae.measurements.annotation.Annotation" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="saleae.measurements.annotation.HorizontalRule">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">saleae.measurements.annotation.</span></span><span class="sig-name descname"><span class="pre">HorizontalRule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Union" title="(in Python v3.10)"><span class="pre">Union</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><span class="pre">int</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><span class="pre">float</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#saleae.measurements.annotation.HorizontalRule" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="saleae.measurements.annotation.VerticalRule">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">saleae.measurements.annotation.</span></span><span class="sig-name descname"><span class="pre">VerticalRule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#saleae.data.SaleaeTime" title="saleae.data.timing.SaleaeTime"><span class="pre">saleae.data.timing.SaleaeTime</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#saleae.measurements.annotation.VerticalRule" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
 </section>
 <section id="indices-and-tables">
 <h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline"></a></h1>
@@ -391,7 +90,9 @@ At least one of measure_point or measure_range must be implemented.</p>
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="api_data.html" class="btn btn-neutral float-right" title="salaea.data package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
 
   <hr/>
 

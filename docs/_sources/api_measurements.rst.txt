@@ -1,0 +1,26 @@
+saleae.measurements package
+===========================
+
+.. automodule:: saleae.measurements.analog_measurer
+
+.. autoclass:: saleae.measurements.analog_measurer.AnalogMeasurer
+   :members:
+   :exclude-members: __new__
+   :no-undoc-members:
+
+.. autoclass:: saleae.measurements.measure.Measure
+   :members:
+   :no-undoc-members:
+
+.. autoclass:: saleae.measurements.annotation.Annotation
+   :members:
+   :no-undoc-members:
+
+.. autoclass:: saleae.measurements.annotation.HorizontalRule
+   :members:
+   :no-undoc-members:
+
+.. autoclass:: saleae.measurements.annotation.VerticalRule
+   :members:
+   :no-undoc-members:
+
