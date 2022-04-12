@@ -74,8 +74,8 @@
 <p>A measurer processes a span of contiguous analog samples and produces:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p>Measures (See <a class="reference internal" href="#saleae.measurements.measure.Measure" title="saleae.measurements.measure.Measure"><code class="xref py py-class docutils literal notranslate"><span class="pre">saleae.measurements.measure.Measure</span></code></a>)</p></li>
-<li><p>Annotations (See <code class="xref py py-class docutils literal notranslate"><span class="pre">saleae.measurements.measure.Annotation</span></code>)</p></li>
+<li><p>Measures (See <a class="reference internal" href="#saleae.measurements.measure.Measure" title="saleae.measurements.measure.Measure"><code class="xref py py-class docutils literal notranslate"><span class="pre">measure.Measure</span></code></a>)</p></li>
+<li><p>Annotations (See <a class="reference internal" href="#saleae.measurements.annotation.Annotation" title="saleae.measurements.annotation.Annotation"><code class="xref py py-class docutils literal notranslate"><span class="pre">annotation.Annotation</span></code></a>)</p></li>
 </ul>
 </div></blockquote>
 <p>To implement a custom measurer:</p>
@@ -87,7 +87,7 @@
 </ul>
 </div></blockquote>
 <p>The <cite>measure_range</cite> method is passed a range of analog samples to process and is where it does its work.
-The declared measures and annotations within this method.</p>
+The declared measures and annotations should be set within this method.</p>
 <div class="literal-block-wrapper docutils container" id="id1">
 <div class="code-block-caption"><span class="caption-text">A basic measurer</span><a class="headerlink" href="#id1" title="Permalink to this code"></a></div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="k">class</span> <span class="nc">MyMeasurer</span><span class="p">(</span><span class="n">AnalogMeasurer</span><span class="p">):</span>
@@ -95,14 +95,15 @@ The declared measures and annotations within this method.</p>
       <span class="n">max_measure</span> <span class="o">=</span> <span class="n">Measure</span><span class="p">(</span><span class="s1">&#39;max&#39;</span><span class="p">)</span>
       <span class="n">mid_measure</span> <span class="o">=</span> <span class="n">Measure</span><span class="p">(</span><span class="s1">&#39;mid&#39;</span><span class="p">)</span>
 
-      <span class="n">mid_annotation</span> <span class="o">=</span> <span class="n">Annotation</span><span class="p">(</span><span class="s1">&#39;mid&#39;</span><span class="p">)</span>
+      <span class="c1"># This annotation will only be shown if the user has enabled `mid_measure`</span>
+      <span class="n">mid_annotation</span> <span class="o">=</span> <span class="n">Annotation</span><span class="p">(</span><span class="s1">&#39;mid&#39;</span><span class="p">,</span> <span class="n">measures</span><span class="o">=</span><span class="p">[</span><span class="n">mid_measure</span><span class="p">])</span>
 
       <span class="k">def</span> <span class="nf">measure_range</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">AnalogSpan</span><span class="p">):</span>
           <span class="bp">self</span><span class="o">.</span><span class="n">min_measure</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">min</span>
           <span class="bp">self</span><span class="o">.</span><span class="n">max_measure</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">max</span>
           <span class="bp">self</span><span class="o">.</span><span class="n">mid_measure</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">max</span> <span class="o">+</span> <span class="n">data</span><span class="o">.</span><span class="n">min</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
 
-          <span class="bp">self</span><span class="o">.</span><span class="n">mid_annotation</span> <span class="o">=</span> <span class="n">HorizontalRule</span><span class="p">()</span>
+          <span class="bp">self</span><span class="o">.</span><span class="n">mid_annotation</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">HorizontalRule</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">mid_measure</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -187,7 +188,12 @@ The declared measures and annotations within this method.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="saleae.measurements.annotation.Annotation.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">measures</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#saleae.measurements.annotation.Annotation.__init__" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>measures</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code></a>[<a class="reference internal" href="#saleae.measurements.measure.Measure" title="saleae.measurements.measure.Measure"><code class="xref py py-class docutils literal notranslate"><span class="pre">Measure</span></code></a>]) – The list of measures that this annotation depends on. If those measures are all disabled, this anotation will not be shown.</p>
+</dd>
+</dl>
+</dd></dl>
 
 </dd></dl>
 
